@@ -1,0 +1,33 @@
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<?php
+if (isset($_POST['send'])){
+  $combobox = $_POST['combo'];
+	if(!empty($combobox)){
+		$count = count($combobox);
+		if ($count > 2){
+			echo 'Selecionar até 2 sorvetes';
+		}else{	
+			$combobox = implode(', ',$combobox);
+			echo $combobox;
+		}
+		
+	}else{
+		echo 'Selecionar um sabor';
+	}
+	
+	
+}
+?>
+
+<form action="" method="post" class="formCadastro" >
+    <select name="combo[]" multiple="multiple" size="5">
+         <option value="" disabled="disabled">Selecionar ate 2 sorvetes</option>
+         <option value="morango">morango</option>
+         <option value="pera">pera</option>
+         <option value="chocolate">chocolate</option>
+         <option value="limao">limao</option>
+        
+    </select>
+
+	<input type="submit" name="send" />
+</form>
