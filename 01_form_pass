@@ -1,0 +1,27 @@
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<?php
+if (isset($_POST['send'])){
+  $pass = $_POST['senha'];
+	$pass = base64_encode(md5($pass));
+	
+	$clientesenha = '123';
+	
+	
+	if ($pass == base64_encode(md5($clientesenha))){
+		echo 'Cliente logou';	
+	}else{
+		echo 'Erro ao logar';
+	}
+	
+}
+?>
+
+<form action="" method="post" class="formCadastro">
+
+<label>senha</label>
+<input type="password" name="senha"  />
+
+<input type="submit" name="send" />
+
+
+</form><a 
