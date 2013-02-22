@@ -1,0 +1,18 @@
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<?php
+if (isset($_POST['send'])){
+  $nome = $_POST['nome'];
+
+	echo $nome;
+}
+?>
+
+<form action="" method="post" class="formCadastro">
+
+<label>nome</label>
+<input type="text" name="nome"  />
+
+<input type="submit" name="send" />
+
+
+</form>
