@@ -24,4 +24,4 @@ if (isset($_POST['send'])){
 <input type="submit" name="send" />
 
 
-</form><a 
+</form>
