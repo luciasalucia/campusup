@@ -1,0 +1,44 @@
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<?php
+if (isset($_POST['send'])){
+  $arq = $_FILES['arq'];
+	//echo '<pre>';
+//	print_r($arq);
+//	echo '</pre>';
+	
+	$permissao = array('image/jpg', 'image/png', 'image/pjpeg', 'image/jpeg', 'text/plain');
+	//ver a extensao do arquivo
+	$ext = ($arq['type'] == 'text/plain' ? '.txt' : ($arq['type'] == 'text/png' ? '.png' : '.jpg'));
+	$size = 2*1024*1024;
+	
+	//validar size
+	if($arq['size'] > $size){
+		//in_array vai pesquisarr no type as determinadas permissoes
+	}elseif(!in_array($arq['type'], $permissao)){
+		echo 'apenas imagens ou textp';
+	}else{
+		$pasta = ($arq['type'] == 'text/plain' ? 'arquivo' : 'imagem');
+		$pasta = 'uploads/'.$pasta;
+		$nome = md5(time()).$ext;
+		if(move_uploaded_file($arq['tmp_name'],$pasta.'/'.$nome)){
+			echo 'arquivo cadastrado com sucesso';
+		}else{
+			echo 'erro ao enviar o aquivo';
+		}
+		
+	}
+	
+	
+	
+	
+	
+}
+?>
+
+<form action="" method="post" class="formCadastro" enctype="multipart/form-data" >
+	<label><span>Arquivo</span></label>
+    <input type="file" name="arq"  />
+  
+
+	<input type="submit" value="enviar arquivo" name="send" />
+</form>
