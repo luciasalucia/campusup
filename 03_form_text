@@ -1,0 +1,18 @@
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<?php
+if (isset($_POST['send'])){
+  $texto = nl2br($_POST['texto']);
+	echo $texto;
+	
+}
+?>
+
+<form action="" method="post" class="formCadastro">
+
+<label>texto</label>
+<textarea class="texto" name="texto" rows="10" cols="20"></textarea>
+
+<input type="submit" name="send" />
+
+
+</form>
