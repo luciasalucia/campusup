@@ -1,0 +1,24 @@
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<?php
+if (isset($_POST['send'])){
+  $listbox = $_POST['listbox'];
+	if(empty($listbox)){
+		echo 'sim e nao';
+	}else{
+		echo $listbox;
+	}
+	
+}
+?>
+
+<form action="" method="post" class="formCadastro">
+    <label>texto</label>
+    <select name="listbox">
+         <option value="">Quer sorvete?</option>
+        <option value="s">Sim</option>
+        <option value="n">Nao</option>
+        
+    </select>
+
+	<input type="submit" name="send" />
+</form>
