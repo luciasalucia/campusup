@@ -1,0 +1,31 @@
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<?php
+if (isset($_POST['send'])){
+  $sabor = $_POST['sabor'];
+	if(empty($sabor)){
+		echo 'vazio';
+	}else{
+		$count = count($sabor);
+		if($count<= 2){
+			$sabor = implode(', ',$sabor);
+			echo $sabor;
+		}else{
+			echo 'selecione ate 2 sabores';
+		}
+	}
+	
+	
+	
+	
+}
+?>
+
+<form action="" method="post" class="formCadastro" >
+   <label>Selecione ate 2 sabores</label>
+     <label><input type="checkbox" name="sabor[]" value="morango" />morango</label>
+     <label><input type="checkbox" name="sabor[]" value="manga" />manga</label>
+     <label><input type="checkbox" name="sabor[]" value="chocolate" />chocolate</label>
+     <label><input type="checkbox" name="sabor[]" value="pera" />pera</label>
+
+	<input type="submit" name="send" />
+</form>
