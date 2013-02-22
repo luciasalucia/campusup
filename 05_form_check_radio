@@ -1,0 +1,23 @@
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<?php
+if (isset($_POST['send'])){
+  $radio = $_POST['simounao'];
+	if(empty($radio)){
+		echo 'escolha sim ou nao';
+	}else{
+		echo $radio;
+	}
+	
+	
+	
+	
+}
+?>
+
+<form action="" method="post" class="formCadastro" >
+   <label>Quer um sorvete</label>
+     <label><input type="radio" name="simounao" value="s" />sim</label>
+     <label><input type="radio" name="simounao" value="n" />nao</label>
+
+	<input type="submit" name="send" />
+</form>
